@@ -125,7 +125,7 @@ class OpenAIWrapper:
 
 DEFAULT_LLAMA2_CONFIG = {
     "task": "text-generation",
-    "model": "meta-llama/Llama-2-7b-chat-hf",
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
     "torch_dtype": torch.float16,
     "device_map": "auto",
     "do_sample": False
