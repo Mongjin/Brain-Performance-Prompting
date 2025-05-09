@@ -212,8 +212,8 @@ def _run_task(task_name, model, task, i, method, num_generation, sleep_rate=SLEE
         raise NotImplementedError(f"task {task_name} not implemented; please choose from ['trivia_creative_writing', 'logic_grid_puzzle', 'codenames_collaborative']")
 
     # log everything else that is related
-    if "llama_config" in args:
-        args["llama_config"]["torch_dtype"] = str(args["llama_config"]["torch_dtype"])
+    if "LLM_configs" in args:
+        args["LLM_configs"]["torch_dtype"] = str(args["LLM_configs"]["torch_dtype"])
     log_output.update(args)
     log_output.update({"task_data":task.get_input(i)})
     return log_output
@@ -244,7 +244,7 @@ def run(args):
         sleep_rate = SLEEP_RATE
 
     elif model_type == 'llama' or model_type == 'qwen' or model_type == 'mistral':
-        model_config = args['llama_config']
+        model_config = args['LLM_configs']
         model = Llama2Wrapper(config=model_config)
         # setup log file
         log_file = setup_log_file(task_data_file, method, model_config, start_idx, end_idx, additional_output_note, system_message, output_dir)
@@ -351,10 +351,10 @@ if __name__ == '__main__':
     elif model_type == 'llama2':
         ### llama config ###
         if model_name in LLM_configs:
-            args['llama_config'] = LLM_configs[model_name] # llama configs
+            args['LLM_configs'] = LLM_configs[model_name] # llama configs
         else:
-            args['llama_config'] = default_llama_config
-            args['llama_config']['model'] = model_name
+            args['LLM_configs'] = default_llama_config
+            args['LLM_configs']['model'] = model_name
 
     print("run args:", args)
     run(args)
