@@ -348,7 +348,7 @@ if __name__ == '__main__':
         args['gpt_config']['temperature'] = args['temperature']
         args['gpt_config']['top_p'] = args['top_p']
     
-    elif model_type == 'llama2':
+    elif model_type == 'llama' or model_type == 'qwen':
         ### llama config ###
         if model_name in LLM_configs:
             args['LLM_configs'] = LLM_configs[model_name] # llama configs
