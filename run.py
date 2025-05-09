@@ -314,7 +314,7 @@ def parse_args():
     args.add_argument('--model', type=str, choices=model_choices, required=True) # gpt-4o, gpt35-turbo, meta-llama/Llama-2-7b-chat-hf, meta-llama/Llama-2-13b-chat-hf
     args.add_argument('--output_dir', type=str, required=False, default="")
     args.add_argument('--model_type', type=str, choices=['gpt','llama', 'qwen'], default='gpt')
-    args.add_argument('--method', type=str, choices=['standard','cot','spp', 'self_refine', 'bpp1', 'bpp2', 'bpp3', 'bpp', 'bpp_w_r_demo', 'bpp_w_k_demo', 'bpp_two_k_demo', 'bpp_two_r_demo'], required=True)
+    args.add_argument('--method', type=str, choices=['standard','cot','spp', 'self_refine', 'macro_bpp', 'meso_bpp', 'micro_bpp', 'bpp', 'bpp_w_r_demo', 'bpp_w_k_demo', 'bpp_two_k_demo', 'bpp_two_r_demo'], required=True)
     args.add_argument('--task', type=str, choices=['trivia_creative_writing', 'logic_grid_puzzle', 'codenames_collaborative'], required=True)
     args.add_argument('--task_data_file', type=str, required=True)
     args.add_argument('--task_start_index', type=int, required=True)
