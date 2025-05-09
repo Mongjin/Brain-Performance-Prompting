@@ -156,7 +156,7 @@ class Llama2Wrapper:
             do_sample=self.config["do_sample"],
             num_return_sequences=n,
             eos_token_id=self.tokenizer.eos_token_id,
-            max_length=3999,
+            max_new_tokens=3999,
         )
         # convert generation output into the same format as GPT raw response
         text_outputs = []
