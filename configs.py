@@ -39,21 +39,43 @@ gpt_configs = {
     }
 }
 
-llama_configs = {
-    "meta-llama/Llama-2-7b-chat-hf": {
+LLM_configs = {
+    "meta-llama/Meta-Llama-3.1-70B-Instruct": {
         "task": "text-generation",
-        "model": "meta-llama/Llama-2-7b-chat-hf",
+        "model": "meta-llama/Meta-Llama-3.1-70B-Instruct",
         "torch_dtype": torch.float16,
         "device_map": "auto",
         "do_sample":False,
     },
-    "meta-llama/Llama-2-13b-chat-hf": {
+    "meta-llama/Meta-Llama-3.1-8B-Instruct": {
         "task": "text-generation",
-        "model": "meta-llama/Llama-2-13b-chat-hf",
+        "model": "meta-llama/Meta-Llama-3.1-8B-Instruct",
         "torch_dtype": torch.float16,
         "device_map": "auto",
         "do_sample":False,
-    }
+    },
+    "Qwen/Qwen2.5-72B-Instruct": {
+        "task": "text-generation",
+        "model": "Qwen/Qwen2.5-72B-Instruct",
+        "torch_dtype": torch.float16,
+        "device_map": "auto",
+        "do_sample":False,
+    },
+    "Qwen/Qwen2.5-32B-Instruct": {
+        "task": "text-generation",
+        "model": "Qwen/Qwen2.5-32B-Instruct",
+        "torch_dtype": torch.float16,
+        "device_map": "auto",
+        "do_sample":False,
+    },
+    "Qwen/Qwen2.5-7B-Instruct": {
+        "task": "text-generation",
+        "model": "Qwen/Qwen2.5-7B-Instruct",
+        "torch_dtype": torch.float16,
+        "device_map": "auto",
+        "do_sample":False,
+    },
+    
 }
 
 default_llama_config = {

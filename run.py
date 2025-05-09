@@ -4,7 +4,7 @@ import argparse
 from models import OpenAIWrapper, Llama2Wrapper
 from tasks import get_task
 import time
-from configs import gpt_configs, llama_configs, default_gpt_config, default_llama_config
+from configs import gpt_configs, LLM_configs, default_gpt_config, default_llama_config
 
 
 SLEEP_RATE = 10 # sleep between calls
@@ -309,7 +309,7 @@ def run(args):
 
 
 def parse_args():
-    model_choices = list(gpt_configs.keys()) + list(llama_configs.keys())
+    model_choices = list(gpt_configs.keys()) + list(LLM_configs.keys())
     args = argparse.ArgumentParser()
     args.add_argument('--model', type=str, choices=model_choices, required=True) # gpt-4o, gpt35-turbo, meta-llama/Llama-2-7b-chat-hf, meta-llama/Llama-2-13b-chat-hf
     args.add_argument('--output_dir', type=str, required=False, default="")
@@ -350,8 +350,8 @@ if __name__ == '__main__':
     
     elif model_type == 'llama2':
         ### llama config ###
-        if model_name in llama_configs:
-            args['llama_config'] = llama_configs[model_name] # llama configs
+        if model_name in LLM_configs:
+            args['llama_config'] = LLM_configs[model_name] # llama configs
         else:
             args['llama_config'] = default_llama_config
             args['llama_config']['model'] = model_name
