@@ -243,7 +243,7 @@ def run(args):
         log_file = setup_log_file(task_data_file, method, model_config, start_idx, end_idx, additional_output_note, system_message, output_dir)
         sleep_rate = SLEEP_RATE
 
-    elif model_type == 'llama':
+    elif model_type == 'llama' or model_type == 'qwen' or model_type == 'mistral':
         model_config = args['llama_config']
         model = Llama2Wrapper(config=model_config)
         # setup log file
