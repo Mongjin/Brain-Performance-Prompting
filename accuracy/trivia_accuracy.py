@@ -104,7 +104,7 @@ def process_all_files(root_dir, output_file_name):
 
 def get_root_dir_by_model(model_name):
     # Define the base directory for logs (modify this path according to your environment)
-    base_dir = 'your directory'
+    base_dir = '../logs/trivia_creative_writing'
     
     if model_name == 'gpt-4o':
         return {
@@ -126,11 +126,16 @@ def get_root_dir_by_model(model_name):
             'with_sys_mes': os.path.join(base_dir, 'o1-mini_w_sys_mes'),
             'wo_sys_mes': os.path.join(base_dir, 'o1-mini_wo_sys_mes')
         }
+    elif model_name == 'qwen':
+        return {
+            'with_sys_mes': os.path.join(base_dir, 'Qwen-Qwen2.5-7B-Instruct_w_sys_mes'),
+            'wo_sys_mes': os.path.join(base_dir, 'Qwen-Qwen2.5-7B-Instruct_wo_sys_mes')
+        }
     else:
         raise ValueError(f"Model {model_name} is not supported.")
 
 # Set the model you want to use (gpt-4o, gpt35-turbo, gpt-4o-mini, and o1-mini)
-selected_model = 'o1-mini'
+selected_model = 'qwen'
 
 try:
     root_dirs = get_root_dir_by_model(selected_model)
