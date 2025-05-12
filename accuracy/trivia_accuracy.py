@@ -140,7 +140,7 @@ def get_root_dir_by_model(model_name):
         raise ValueError(f"Model {model_name} is not supported.")
 
 # Set the model you want to use (gpt-4o, gpt35-turbo, gpt-4o-mini, and o1-mini)
-selected_model = 'qwen'
+selected_model = 'llama'
 
 try:
     root_dirs = get_root_dir_by_model(selected_model)

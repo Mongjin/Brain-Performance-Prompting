@@ -149,7 +149,7 @@ def get_root_dir_by_model(model_name):
 
 
 # Set the model you want to use (gpt-4o, gpt35-turbo, gpt-4o-mini, and o1-mini)
-selected_model = 'qwen'
+selected_model = 'llama'
 
 
 root_dirs = get_root_dir_by_model(selected_model)
