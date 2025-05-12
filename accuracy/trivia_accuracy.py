@@ -131,6 +131,11 @@ def get_root_dir_by_model(model_name):
             'with_sys_mes': os.path.join(base_dir, 'Qwen-Qwen2.5-7B-Instruct_w_sys_mes'),
             'wo_sys_mes': os.path.join(base_dir, 'Qwen-Qwen2.5-7B-Instruct_wo_sys_mes')
         }
+    elif model_name == 'llama':
+        return {
+            'with_sys_mes': os.path.join(base_dir, 'meta-llama-Meta-Llama-3.1-8B-Instruct_wo_sys_mes'),
+            'wo_sys_mes': os.path.join(base_dir, 'meta-llama-Meta-Llama-3.1-8B-Instruct_wo_sys_mes')
+        }
     else:
         raise ValueError(f"Model {model_name} is not supported.")
 

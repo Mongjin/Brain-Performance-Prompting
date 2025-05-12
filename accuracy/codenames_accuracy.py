@@ -134,12 +134,17 @@ def get_root_dir_by_model(model_name):
             'with_sys_mes': os.path.join(base_dir, 'Qwen-Qwen2.5-7B-Instruct_w_sys_mes'),
             'wo_sys_mes': os.path.join(base_dir, 'Qwen-Qwen2.5-7B-Instruct_wo_sys_mes')
         }
+    elif model_name == 'llama':
+        return {
+            'with_sys_mes': os.path.join(base_dir, 'meta-llama-Meta-Llama-3.1-8B-Instruct_wo_sys_mes'),
+            'wo_sys_mes': os.path.join(base_dir, 'meta-llama-Meta-Llama-3.1-8B-Instruct_wo_sys_mes')
+        }
     else:
         raise ValueError(f"Model {model_name} is not supported.")
 
 
 # Set the model you want to use (gpt-4o, gpt35-turbo, gpt-4o-mini, and o1-mini)
-selected_model = 'qwen' 
+selected_model = 'llama' 
 
 
 root_dirs = get_root_dir_by_model(selected_model)
