@@ -53,7 +53,7 @@ def process_all_files(root_dir, output_file_name):
         for file in files:
             if file.endswith('.jsonl'):
                 file_path = os.path.join(root, file)
-                file_path = r"\\?\{}".format(file_path.replace('/', '\\'))
+                # file_path = r"\\?\{}".format(file_path.replace('/', '\\'))
                 
                 try:
                     model = file.split("_model-")[1].split("_")[0]
