@@ -111,7 +111,7 @@ def process_all_files(root_dir, output_file_name):
 
 def get_root_dir_by_model(model_name):
     # Define the base directory for logs (modify this path according to your environment)
-    base_dir = '../logs/logic_puzzle'
+    base_dir = '/home/mongjin/Brain-Performance-Prompting/logs/logic_puzzle'
     
     if model_name == 'gpt-4o':
         return {
